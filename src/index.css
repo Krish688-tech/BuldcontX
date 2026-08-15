@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@theme {
+  --color-paper: #f6f4ee;
+  --color-paper-2: #eeece4;
+  --color-ink: #10202a;
+  --color-blue: #175b88;
+  --color-blue-dark: #0d3f61;
+  --color-blue-soft: #dcecf5;
+  --color-sea: #16756c;
+  --color-forest: #155c4a;
+  --color-line: #d7d9d3;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "DM Mono", monospace;
+}
+
+:root {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-paper);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-paper);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #175b88;
+  color: white;
+}
+
+.site-grid {
+  background-image:
+    linear-gradient(rgba(23, 91, 136, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 91, 136, 0.075) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.blueprint-grid {
+  background-color: #0d3f61;
+  background-image:
+    linear-gradient(rgba(145, 222, 232, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(145, 222, 232, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.display {
+  font-family: var(--font-display);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.reveal-line {
+  overflow: hidden;
+}
+
+.glass {
+  background: rgba(246, 244, 238, 0.76);
+  border: 1px solid rgba(16, 32, 42, 0.09);
+  backdrop-filter: blur(18px);
+}
+
+.shadow-premium {
+  box-shadow: 0 25px 80px rgba(16, 32, 42, 0.1);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+canvas {
+  display: block;
+}
+
+.marquee-track {
+  will-change: transform;
+}
+
+.marquee-left {
+  animation: marquee-left 32s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 36s linear infinite;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-left,
+  .marquee-right {
+    animation: none;
+  }
+}
