@@ -45,7 +45,7 @@ export default function HeroVideo() {
         );
 
       gsap.to(video, {
-        scale: 1.06,
+        scale: window.innerWidth < 768 ? 1.02 : 1.06,
         ease: "none",
         scrollTrigger: {
           trigger: section,
@@ -95,12 +95,13 @@ export default function HeroVideo() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative h-screen min-h-175 w-full overflow-hidden bg-[#0b1821]"
+      className="relative min-h-svh w-full overflow-hidden bg-[#0b1821]"
     >
       {/* VIDEO */}
 
       <video
         ref={videoRef}
+        src="/videos/buldcontx-hero.webm" 
         src="/videos/buldcontx-hero.mp4"
         autoPlay
         muted
