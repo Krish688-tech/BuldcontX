@@ -29,36 +29,4 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Editor / IDE
 
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS generated files
-
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Vite cache
-
-.vite/
-
-# Temporary files
-
-*.tmp
-*.temp
-
-# Coverage
-
-coverage/
-
-# Local Netlify files
-
-.netlify/
-
-# Local Vercel files
-
-.vercel/
