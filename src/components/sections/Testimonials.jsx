@@ -92,33 +92,46 @@ export default function Testimonials() {
     const autoplay = setInterval(() => {
       setDirection(1);
       setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 3500);
 
     return () => clearInterval(autoplay);
   }, [isHovered]);
 
   useEffect(() => {
-    const distance = direction > 0 ? 45 : -45;
+    const distance = direction > 0 ? 50 : -50;
+
+    const elements = [
+      quoteRef.current,
+      metaRef.current,
+      numberRef.current,
+    ].filter(Boolean);
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-
-      tl.to([quoteRef.current, metaRef.current, numberRef.current], {
-        x: -distance,
-        opacity: 0,
-        duration: 0.22,
-        ease: "power2.in",
+      const tl = gsap.timeline({
+        defaults: {
+          overwrite: "auto",
+        },
       });
 
-      tl.set([quoteRef.current, metaRef.current, numberRef.current], {
+      // Exit
+      tl.to(elements, {
+        x: -distance,
+        opacity: 0,
+        duration: 0.35,
+        ease: "power2.inOut",
+      });
+
+      // Reset position
+      tl.set(elements, {
         x: distance,
       });
 
-      tl.to([quoteRef.current, metaRef.current, numberRef.current], {
+      // Enter
+      tl.to(elements, {
         x: 0,
         opacity: 1,
-        duration: 0.55,
-        stagger: 0.05,
+        duration: 0.75,
+        stagger: 0.08,
         ease: "power3.out",
       });
     }, sectionRef);

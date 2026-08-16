@@ -44,9 +44,11 @@ export default function Navbar() {
             onClick={() => go("home")}
             className="flex shrink-0 items-center gap-2.5 text-left sm:gap-3"
           >
-            <span className="grid size-8 place-items-center rounded-full bg-blue text-[10px] font-bold text-white sm:size-9 sm:text-xs">
-              BC
-            </span>
+            <img
+              src="/apple-touch-icon.png"
+              alt="BuldContX"
+              className="size-8 rounded-full object-cover sm:size-9"
+            />
 
             <span className="font-display text-base font-bold tracking-tight text-ink sm:text-lg">
               buldcontx
@@ -100,98 +102,103 @@ export default function Navbar() {
 
       {/* FULL SCREEN MENU */}
 
-<AnimatePresence>
-  {open && (
-    <motion.div
-      initial={{ clipPath: "circle(0% at 94% 7%)" }}
-      animate={{ clipPath: "circle(150% at 94% 7%)" }}
-      exit={{ clipPath: "circle(0% at 94% 7%)" }}
-      transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-      className="fixed inset-0 z-60 overflow-hidden bg-[#10232d] text-white"
-    >
-      <div className="mx-auto flex min-h-full max-w-7xl flex-col px-6 py-5 sm:px-10 sm:py-7 lg:px-16 lg:py-8">
-        
-        {/* MENU HEADER */}
-
-        <div className="flex items-center justify-between">
-          <motion.button
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            onClick={() => go("home")}
-            className="font-display text-xl font-bold sm:text-2xl"
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ clipPath: "circle(0% at 94% 7%)" }}
+            animate={{ clipPath: "circle(150% at 94% 7%)" }}
+            exit={{ clipPath: "circle(0% at 94% 7%)" }}
+            transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+            className="fixed inset-0 z-60 overflow-hidden bg-[#10232d] text-white"
           >
-            buld<span className="text-[#5EC8BE]">contx</span>
-          </motion.button>
+            <div className="mx-auto flex min-h-full max-w-7xl flex-col px-6 py-5 sm:px-10 sm:py-7 lg:px-16 lg:py-8">
+              {/* MENU HEADER */}
 
-          <motion.button
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            onClick={() => setOpen(false)}
-            className="grid size-10 place-items-center rounded-full border border-white/15 transition hover:border-white/40 hover:bg-white/10 sm:size-11"
-            aria-label="Close menu"
-          >
-            <X size={21} />
-          </motion.button>
-        </div>
+              <div className="flex items-center justify-between">
+                <motion.button
+                  initial={{ opacity: 0, y: -15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  onClick={() => go("home")}
+                  className="font-display text-xl font-bold sm:text-2xl"
+                >
+                  buld<span className="text-[#5EC8BE]">contx</span>
+                </motion.button>
 
-        {/* MENU ITEMS */}
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.7 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  onClick={() => setOpen(false)}
+                  className="grid size-10 place-items-center rounded-full border border-white/15 transition hover:border-white/40 hover:bg-white/10 sm:size-11"
+                  aria-label="Close menu"
+                >
+                  <X size={21} />
+                </motion.button>
+              </div>
 
-        <nav className="my-auto grid gap-3 py-10 sm:gap-4 sm:py-16 lg:gap-3 lg:py-12">
-  {NAV_ITEMS.map((item, index) => (
-    <motion.button
-      key={item.id}
-      initial={{ opacity: 0, x: 45 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 30 }}
-      transition={{ delay: 0.22 + index * 0.07, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      onClick={() => go(item.id)}
-      className="group relative flex w-full items-baseline gap-3 pb-3 text-left sm:gap-5 sm:pb-4"
-    >
-      {/* NUMBER */}
+              {/* MENU ITEMS */}
 
-      <span className="mono w-5 shrink-0 text-[8px] text-[#5EC8BE] sm:w-6 sm:text-[9px]">
-        0{index + 1}
-      </span>
+              <nav className="my-auto grid gap-3 py-10 sm:gap-4 sm:py-16 lg:gap-3 lg:py-12">
+                {NAV_ITEMS.map((item, index) => (
+                  <motion.button
+                    key={item.id}
+                    initial={{ opacity: 0, x: 45 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 30 }}
+                    transition={{
+                      delay: 0.22 + index * 0.07,
+                      duration: 0.55,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    onClick={() => go(item.id)}
+                    className="group relative flex w-full items-baseline gap-3 pb-3 text-left sm:gap-5 sm:pb-4"
+                  >
+                    {/* NUMBER */}
 
-      {/* LABEL + ARROW */}
+                    <span className="mono w-5 shrink-0 text-[8px] text-[#5EC8BE] sm:w-6 sm:text-[9px]">
+                      0{index + 1}
+                    </span>
 
-      <span className="relative flex items-center">
-        <span className="font-display text-[clamp(2.2rem,7vw,5rem)] font-semibold leading-[0.9] tracking-[-0.055em] transition-all duration-500 ease-out group-hover:translate-x-1 group-hover:scale-[1.035] group-hover:text-[#5EC8BE] sm:text-[clamp(2.8rem,7vw,5.5rem)] lg:text-[clamp(2.8rem,5vw,5rem)]">
-          {item.label}
-        </span>
+                    {/* LABEL + ARROW */}
 
-        {/* ARROW */}
+                    <span className="relative flex items-center">
+                      <span className="font-display text-[clamp(2.2rem,7vw,5rem)] font-semibold leading-[0.9] tracking-[-0.055em] transition-all duration-500 ease-out group-hover:translate-x-1 group-hover:scale-[1.035] group-hover:text-[#5EC8BE] sm:text-[clamp(2.8rem,7vw,5.5rem)] lg:text-[clamp(2.8rem,5vw,5rem)]">
+                        {item.label}
+                      </span>
 
-        <span className="ml-3 -translate-x-2 text-[#5EC8BE] opacity-0 transition-all duration-300 ease-out group-hover:translate-x-2 group-hover:opacity-100 sm:ml-4">
-          <ArrowUpRight size={26} strokeWidth={1.5} className="sm:size-7" />
-        </span>
-      </span>
+                      {/* ARROW */}
 
-      {/* FULL WIDTH UNDERLINE */}
+                      <span className="ml-3 -translate-x-2 text-[#5EC8BE] opacity-0 transition-all duration-300 ease-out group-hover:translate-x-2 group-hover:opacity-100 sm:ml-4">
+                        <ArrowUpRight
+                          size={26}
+                          strokeWidth={1.5}
+                          className="sm:size-7"
+                        />
+                      </span>
+                    </span>
 
-      <span className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-[#5EC8BE] transition-transform duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100" />
-    </motion.button>
-  ))}
-</nav>
-        {/* MENU FOOTER */}
+                    {/* FULL WIDTH UNDERLINE */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-          className="flex flex-col gap-2 border-t border-white/10 py-5 text-[9px] text-white/40 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:text-xs"
-        >
-          <span>COMPLETE HOME CONSTRUCTION</span>
-          <span>PLAN · DESIGN · BUILD · HANDOVER</span>
-        </motion.div>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
+                    <span className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-[#5EC8BE] transition-transform duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100" />
+                  </motion.button>
+                ))}
+              </nav>
+              {/* MENU FOOTER */}
 
-             
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+                className="flex flex-col gap-2 border-t border-white/10 py-5 text-[9px] text-white/40 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:text-xs"
+              >
+                <span>COMPLETE HOME CONSTRUCTION</span>
+                <span>PLAN · DESIGN · BUILD · HANDOVER</span>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -101,8 +101,6 @@ export default function HeroVideo() {
 
       <video
         ref={videoRef}
-        src="/videos/buldcontx-hero.webm" 
-        src="/videos/buldcontx-hero.mp4"
         autoPlay
         muted
         loop
@@ -111,7 +109,10 @@ export default function HeroVideo() {
         poster="/images/buldcontx-hero-poster.webp"
         aria-label="BuldContx home construction planning and building process"
         className="absolute inset-0 h-full w-full object-cover"
-      />
+      >
+        <source src="/videos/buldcontx-hero.webm" type="video/webm" />
+        <source src="/videos/buldcontx-hero.mp4" type="video/mp4" />
+      </video>
 
       {/* HERO CONTENT */}
 
