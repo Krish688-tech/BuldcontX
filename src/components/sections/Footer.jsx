@@ -16,7 +16,7 @@ const socialLinks = [
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61593479906247", icon: Facebook },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/palani-ganesan-b27a903a/", icon: Linkedin },
   { label: "X", href: "https://x.com/buldcontx", icon: "x" },
-  { label: "YouTube", href: "#", icon: Youtube },
+  { label: "YouTube", href: "", icon: Youtube },
 ];
 
 export default function Footer() {
