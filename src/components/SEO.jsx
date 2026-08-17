@@ -3,14 +3,14 @@ import { Helmet } from "react-helmet-async";
 const SITE_URL = "https://buldcontx.in";
 
 const title =
-  "BuldContx | Home Construction & Building Services";
+  "BuldContx | Home Construction, House Planning & Building Services";
 
 const description =
-  "BuldContx provides complete home construction, house planning, 2D and 3D drawings, material estimation and construction services, backed by more than 36 years of construction experience since 1991.";
+  "BuldContx provides complete home construction, house planning, 2D and 3D drawings, material estimation and project execution, backed by construction experience since 1991.";
 
 const businessSchema = {
   "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness"],
+  "@type": ["HomeAndConstructionBusiness", "Organization"],
 
   "@id": `${SITE_URL}/#organization`,
 
@@ -43,22 +43,32 @@ const businessSchema = {
 
   "email": "buldcontx@gmail.com",
 
+  "priceRange": "$$",
+
   "areaServed": [
     {
       "@type": "State",
-      "name": "Tamil Nadu"
-    },
-    {
-      "@type": "Country",
-      "name": "India"
-    },
-    {
-      "@type": "City",
-      "name": "Dubai"
+      "name": "Tamil Nadu",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "India"
+      }
     },
     {
       "@type": "City",
-      "name": "Abu Dhabi"
+      "name": "Dubai",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Abu Dhabi",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      }
     },
     {
       "@type": "Country",
@@ -66,20 +76,39 @@ const businessSchema = {
     },
     {
       "@type": "City",
-      "name": "Muscat"
+      "name": "Muscat",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Oman"
+      }
     }
   ],
 
   "knowsAbout": [
     "Home Construction",
     "Residential Construction",
+    "Building Construction",
     "House Planning",
     "2D House Drawings",
     "3D House Visualization",
     "Material Estimation",
     "Construction Project Management",
-    "Building Construction"
+    "Structural Construction",
+    "Building Materials",
+    "Electrical Planning",
+    "Plumbing Planning"
   ],
+
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+917339693861",
+    "contactType": "customer service",
+    "email": "buldcontx@gmail.com",
+    "availableLanguage": [
+      "English",
+      "Tamil"
+    ]
+  },
 
   "sameAs": [
     "https://www.instagram.com/buldcontx/",
@@ -91,7 +120,6 @@ const businessSchema = {
 
 const websiteSchema = {
   "@context": "https://schema.org",
-
   "@type": "WebSite",
 
   "@id": `${SITE_URL}/#website`,
@@ -110,8 +138,6 @@ const websiteSchema = {
 export default function SEO() {
   return (
     <Helmet>
-
-      {/* Basic SEO */}
 
       <html lang="en" />
 
@@ -208,7 +234,7 @@ export default function SEO() {
 
       <meta
         name="twitter:image:alt"
-        content="BuldContx home construction services"
+        content="BuldContx home construction and building services"
       />
 
       {/* Theme */}
@@ -218,13 +244,13 @@ export default function SEO() {
         content="#F6F4EE"
       />
 
-      {/* Organization / LocalBusiness */}
+      {/* Business Schema */}
 
       <script type="application/ld+json">
         {JSON.stringify(businessSchema)}
       </script>
 
-      {/* Website */}
+      {/* Website Schema */}
 
       <script type="application/ld+json">
         {JSON.stringify(websiteSchema)}
