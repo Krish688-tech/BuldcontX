@@ -52,6 +52,9 @@ export default function Navbar() {
 
             <span className="font-display text-base font-bold tracking-tight text-ink sm:text-lg">
               buldcontx
+              <sup className="ml-0.5 text-[8px] font-semibold align-super sm:text-[9px]">
+                TM
+              </sup>
             </span>
           </button>
 
@@ -120,9 +123,13 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
                   onClick={() => go("home")}
-                  className="font-display text-xl font-bold sm:text-2xl"
+                  className="relative font-display text-xl font-bold sm:text-2xl lg:text-[3rem]! lg:leading-none!"
                 >
-                  buld<span className="text-[#5EC8BE]">contx</span>
+                  buld
+                  <span className="text-[#5EC8BE]">contx</span>
+                  <sup className="absolute right-[-0.18em] top-[-0.12em] text-[0.22em]! font-bold leading-none tracking-normal">
+                    TM
+                  </sup>
                 </motion.button>
 
                 <motion.button
