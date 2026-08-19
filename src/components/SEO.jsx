@@ -112,9 +112,10 @@ const businessSchema = {
 
   "sameAs": [
     "https://www.instagram.com/buldcontx/",
-    "https://www.facebook.com/profile.php?id=61593479906247",
+    "https://www.facebook.com/BuldcontX",
     "https://www.linkedin.com/in/palani-ganesan-b27a903a/",
-    "https://x.com/buldcontx"
+    "https://x.com/buldcontx",
+    "https://www.youtube.com/@BuldContx"
   ]
 };
 

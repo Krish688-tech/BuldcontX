@@ -26,7 +26,7 @@ const socialLinks = [
   },
   {
     label: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=61593479906247",
+    href: "https://www.facebook.com/BuldcontX",
     icon: Facebook,
   },
   {
