@@ -42,7 +42,7 @@ export default function Navbar() {
 
           <button
             onClick={() => go("home")}
-            className="flex shrink-0 items-center gap-2.5 text-left sm:gap-3"
+            className="group flex shrink-0 items-center gap-2.5 text-left sm:gap-3"
           >
             <img
               src="/apple-touch-icon.png"
@@ -50,9 +50,19 @@ export default function Navbar() {
               className="size-8 rounded-full object-cover sm:size-9"
             />
 
-            <span className="font-display text-base font-bold tracking-tight text-ink sm:text-lg">
-              buldcontx
-              <sup className="ml-0.5 text-[8px] font-semibold align-super sm:text-[9px]">
+            <span className="flex items-center font-display text-base font-extrabold tracking-tight whitespace-nowrap sm:text-lg lg:text-xl">
+              <span className="bg-linear-to-b from-[#2c8f8f] via-[#07565b] to-[#022d34] bg-clip-text text-transparent">
+                BULD
+              </span>
+              <span className="bg-linear-to-b from-[#ffffff] via-[#c8c8c8] to-[#666666] bg-clip-text text-transparent">
+                CONT
+              </span>
+              <img
+                src="custom-x.png"
+                alt="X"
+                className="-ml-1 inline-block h-[1.15em] w-auto object-contain transition-transform duration-700 ease-in-out group-hover:rotate-360"
+              />
+              <sup className="ml-0.5 text-[8px] font-semibold text-ink sm:text-[9px]">
                 TM
               </sup>
             </span>

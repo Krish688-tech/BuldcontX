@@ -165,15 +165,27 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1fr_.7fr] lg:items-end">
           <div>
             <div ref={logoRef}>
-              <h2 className="font-[Space_Grotesk] text-6xl font-semibold leading-[.8] tracking-[-0.075em] sm:text-7xl lg:text-[10rem]">
-                Buld
-                <span className="text-[#39a989]">
-                  Contx
+              <div className="group relative inline-block cursor-pointer">
+                <h2 className="relative flex items-center font-[Space_Grotesk] text-6xl font-semibold leading-[.8] tracking-[-0.075em] sm:text-7xl lg:text-[10rem]">
+                  <span className="bg-linear-to-b from-[#2c8f8f] via-[#0caab5] to-[#077283] bg-clip-text text-transparent">
+                    Buld
+                  </span>
+
+                  <span className="bg-linear-to-b from-[#ffffff] via-[#f1efef] to-[#ede9e9] bg-clip-text text-transparent">
+                    Cont
+                  </span>
+
+                  <img
+                    src="custom-x.png"
+                    alt="X"
+                    className="ml-[-0.01em] inline-block h-[0.82em] w-auto translate-y-[0.08em] object-contain transition-transform duration-700 ease-in-out group-hover:rotate-360"
+                  />
+
                   <sup className="absolute right-[-0.15em] top-[-0.05em] text-[0.12em] font-bold tracking-normal">
                     TM
                   </sup>
-                </span>
-              </h2>
+                </h2>
+              </div>
 
               <p className="mt-8 max-w-2xl text-lg leading-8 text-white/45 sm:text-xl">
                 Built on experience.
