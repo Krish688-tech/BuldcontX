@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const SITE_URL = "https://buldcontx.in";
+const SITE_URL = "https://www.buldcontx.in";
 
 const title =
   "BuldContx | Home Construction, House Planning & Building Services";
