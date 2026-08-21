@@ -275,7 +275,7 @@ Thank you.`;
                   </p>
 
                   <h3 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-[#10232d]">
-                    Tell us about your project.
+                    Discuss Your Design with Mr. Kavi Priyan
                   </h3>
                 </div>
 

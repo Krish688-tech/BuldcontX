@@ -30,7 +30,7 @@ export default function Projects() {
             trigger: section,
             start: "top 75%",
           },
-        }
+        },
       );
 
       gsap.fromTo(
@@ -46,7 +46,7 @@ export default function Projects() {
             end: "bottom bottom",
             scrub: true,
           },
-        }
+        },
       );
 
       gsap.to(progressRef.current, {
@@ -75,12 +75,14 @@ export default function Projects() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="projects" className="relative bg-[#10232d] text-[#f5f4ee]">
-      
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="relative bg-[#10232d] text-[#f5f4ee]"
+    >
       {/* INTRO */}
       <div className="projects-intro relative mx-auto max-w-7xl px-5 pb-20 pt-28 sm:px-8 lg:px-16 lg:pb-28 lg:pt-40">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
-          
           <div>
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-10 bg-[#39a989]" />
@@ -97,16 +99,15 @@ export default function Projects() {
 
           <div>
             <p className="max-w-xl text-base leading-7 text-white/55 sm:text-lg">
-              From Tamil Nadu to international projects, BuldContx carries decades of construction experience into every new build.
+              From Tamil Nadu to international projects, BuldContx carries
+              decades of construction experience into every new build.
             </p>
           </div>
-
         </div>
       </div>
 
       {/* TIMELINE */}
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-16">
-
         <div className="absolute left-8 top-0 hidden h-full w-px bg-white/10 lg:left-16 lg:block">
           <div
             ref={timelineRef}
@@ -120,13 +121,10 @@ export default function Projects() {
         </div>
 
         <div className="grid lg:grid-cols-[.65fr_1.35fr]">
-
           {/* JOURNEY MARKERS */}
           <div className="hidden lg:block">
             <div className="sticky top-32 flex h-[70vh] items-center pl-24">
-
               <div className="relative w-full max-w-xs">
-
                 <div className="mb-8 font-mono text-[10px] uppercase tracking-[0.3em] text-white/35">
                   Our Journey
                 </div>
@@ -141,14 +139,12 @@ export default function Projects() {
                     />
                   ))}
                 </div>
-
               </div>
             </div>
           </div>
 
           {/* PROJECTS */}
           <div className="relative">
-
             {projectHistory.map((project, index) => (
               <ProjectHistoryItem
                 key={project.id}
@@ -157,18 +153,14 @@ export default function Projects() {
                 activeIndex={activeIndex}
               />
             ))}
-
           </div>
         </div>
       </div>
 
       {/* FINAL BRAND STATEMENT */}
       <div className="relative overflow-hidden border-t border-white/10">
-
         <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-16 lg:py-32">
-
           <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
-
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#39a989]">
                 Built on experience
@@ -183,47 +175,60 @@ export default function Projects() {
             </div>
 
             <div>
-
               <p className="max-w-2xl text-lg leading-8 text-white/60">
-                Every project adds another chapter to the BuldContx story —
-                from public infrastructure and institutional projects to
-                residential construction.
+                Every project adds another chapter to the BuldContx story — from
+                public infrastructure and institutional projects to residential
+                construction.
               </p>
 
-              <div className="mt-10 flex items-center gap-4">
+              <div className="mt-10 flex flex-wrap items-center gap-8">
+                {/* Founder */}
+                <div className="flex items-center gap-4">
+                  <div className="grid size-14 place-items-center rounded-full border border-[#39a989]/40 bg-[#39a989]/10">
+                    <ArrowUpRight size={20} className="text-[#39a989]" />
+                  </div>
 
-                <div className="grid size-14 place-items-center rounded-full border border-[#39a989]/40 bg-[#39a989]/10">
-                  <ArrowUpRight size={20} className="text-[#39a989]" />
+                  <div>
+                    <p className="text-sm font-semibold text-white">
+                      Mr. Palani Ganesan
+                    </p>
+
+                    <p className="mt-1 text-xs text-white/40">
+                      Founder & Owner · BuldContx
+                    </p>
+                  </div>
                 </div>
 
-                <div>
-                  <p className="text-sm font-semibold text-white">
-                    Mr. Palani Ganesan
-                  </p>
+                {/* Design Engineer */}
+                <div className="flex items-center gap-4">
+                  <div className="grid size-14 place-items-center rounded-full border border-[#39a989]/40 bg-[#39a989]/10">
+                    <ArrowUpRight size={20} className="text-[#39a989]" />
+                  </div>
 
-                  <p className="mt-1 text-xs text-white/40">
-                    Founder & Owner · BuldContx
-                  </p>
+                  <div>
+                    <p className="text-sm font-semibold text-white">
+                      Mr. Kavi Priyan
+                    </p>
+
+                    <p className="mt-1 text-xs text-white/40">
+                      Design Engineer · Architecture · BuldContx
+                    </p>
+                  </div>
                 </div>
-
               </div>
-
             </div>
           </div>
         </div>
       </div>
-
     </section>
   );
 }
-
 
 /* ============================================================
    PROJECT ITEM
 ============================================================ */
 
 function ProjectHistoryItem({ project, index, activeIndex }) {
-
   const itemRef = useRef(null);
   const contentRef = useRef(null);
   const titleRef = useRef(null);
@@ -233,17 +238,11 @@ function ProjectHistoryItem({ project, index, activeIndex }) {
   const isActive = index === activeIndex;
 
   useEffect(() => {
-
     if (!isActive) return;
 
     const ctx = gsap.context(() => {
-
       gsap.fromTo(
-        [
-          titleRef.current,
-          descriptionRef.current,
-          tagsRef.current,
-        ],
+        [titleRef.current, descriptionRef.current, tagsRef.current],
         {
           y: 18,
           opacity: 0,
@@ -254,13 +253,11 @@ function ProjectHistoryItem({ project, index, activeIndex }) {
           duration: 0.55,
           stagger: 0.08,
           ease: "power3.out",
-        }
+        },
       );
-
     }, itemRef);
 
     return () => ctx.revert();
-
   }, [isActive]);
 
   return (
@@ -268,21 +265,15 @@ function ProjectHistoryItem({ project, index, activeIndex }) {
       ref={itemRef}
       className="project-history-item relative min-h-[70vh] border-b border-white/10 py-20 lg:min-h-[82vh] lg:py-28"
     >
-
       <div
         ref={contentRef}
         className={`transition-all duration-700 ${
-          isActive
-            ? "translate-x-0 opacity-100"
-            : "translate-x-3 opacity-30"
+          isActive ? "translate-x-0 opacity-100" : "translate-x-3 opacity-30"
         }`}
       >
-
         {/* TOP META */}
         <div className="mb-8 flex items-center justify-between gap-6">
-
           <div className="flex items-center gap-3">
-
             <span
               className={`grid size-8 place-items-center rounded-full border text-[10px] font-mono transition-all duration-500 ${
                 isActive
@@ -296,19 +287,15 @@ function ProjectHistoryItem({ project, index, activeIndex }) {
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/35">
               {project.year === "—" ? "PROJECT" : project.year}
             </span>
-
           </div>
 
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/30">
             {project.country}
           </span>
-
         </div>
-
 
         {/* PROJECT VISUAL */}
         <div className="relative overflow-hidden rounded-4xl border border-white/10 bg-[#172f3b]">
-
           <div className="relative aspect-video overflow-hidden">
             <ProjectVisual project={project} index={index} />
           </div>
@@ -316,19 +303,14 @@ function ProjectHistoryItem({ project, index, activeIndex }) {
           <div className="absolute inset-0 bg-linear-to-t from-[#10232d] via-transparent to-transparent" />
 
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
-
             <div className="flex items-end justify-between gap-6">
-
               <div>
-
                 <div className="mb-3 flex items-center gap-2">
-
                   <MapPin size={13} className="text-[#39a989]" />
 
                   <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-white/55">
                     {project.region}
                   </span>
-
                 </div>
 
                 <h3
@@ -337,31 +319,24 @@ function ProjectHistoryItem({ project, index, activeIndex }) {
                 >
                   {project.title}
                 </h3>
-
               </div>
 
               <span className="hidden size-12 shrink-0 place-items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md sm:grid">
                 <ArrowDownRight size={18} />
               </span>
-
             </div>
           </div>
         </div>
 
-
         {/* DESCRIPTION */}
         <div className="mt-8 grid gap-8 sm:grid-cols-[.7fr_1.3fr]">
-
           <div>
-
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#39a989]">
               {project.region} / {project.country}
             </span>
-
           </div>
 
           <div>
-
             <p
               ref={descriptionRef}
               className="max-w-xl text-sm leading-7 text-white/55 sm:text-base"
@@ -369,10 +344,7 @@ function ProjectHistoryItem({ project, index, activeIndex }) {
               {project.description}
             </p>
 
-            <div
-              ref={tagsRef}
-              className="mt-6 flex flex-wrap gap-2"
-            >
+            <div ref={tagsRef} className="mt-6 flex flex-wrap gap-2">
               {project.projects.map((item) => (
                 <span
                   key={item}
@@ -382,45 +354,34 @@ function ProjectHistoryItem({ project, index, activeIndex }) {
                 </span>
               ))}
             </div>
-
           </div>
         </div>
-
       </div>
-
     </article>
   );
 }
-
 
 /* ============================================================
    REGION MARKER
 ============================================================ */
 
 function RegionMarker({ region, index, activeIndex }) {
+  const regionIndexes = projectHistory.reduce((acc, project, i) => {
+    if (project.region === region.name) {
+      acc.push(i);
+    }
 
-  const regionIndexes = projectHistory.reduce(
-    (acc, project, i) => {
-      if (project.region === region.name) {
-        acc.push(i);
-      }
-
-      return acc;
-    },
-    []
-  );
+    return acc;
+  }, []);
 
   const isActive = regionIndexes.includes(activeIndex);
 
   return (
     <div
       className={`flex items-center gap-4 transition-all duration-500 ${
-        isActive
-          ? "translate-x-2 opacity-100"
-          : "opacity-30"
+        isActive ? "translate-x-2 opacity-100" : "opacity-30"
       }`}
     >
-
       <span
         className={`size-2 rounded-full transition-all duration-500 ${
           isActive
@@ -430,12 +391,9 @@ function RegionMarker({ region, index, activeIndex }) {
       />
 
       <div>
-
         <p
           className={`text-sm font-medium ${
-            isActive
-              ? "text-white"
-              : "text-white/50"
+            isActive ? "text-white" : "text-white/50"
           }`}
         >
           {region.name}
@@ -444,20 +402,16 @@ function RegionMarker({ region, index, activeIndex }) {
         <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">
           {region.country}
         </p>
-
       </div>
-
     </div>
   );
 }
-
 
 /* ============================================================
    PROJECT VISUAL
 ============================================================ */
 
 function ProjectVisual({ project, index }) {
-
   const patterns = [
     "bg-[radial-gradient(circle_at_30%_30%,rgba(57,169,137,.3),transparent_30%),linear-gradient(135deg,#1d4650,#10232d)]",
 
@@ -470,7 +424,6 @@ function ProjectVisual({ project, index }) {
 
   return (
     <div className={`absolute inset-0 ${patterns[index % patterns.length]}`}>
-
       <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(rgba(255,255,255,.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.5)_1px,transparent_1px)] bg-size-[55px_55px]" />
 
       <div className="absolute left-[15%] top-[22%] h-px w-[70%] rotate-[-8deg] bg-[#39a989]/30" />
@@ -494,13 +447,12 @@ function ProjectVisual({ project, index }) {
       </div>
 
       <div className="absolute inset-0">
-      <img
-        src={project.image}
-        alt={project.alt}
-        className="h-full w-full object-cover"
-      />
-    </div>
-
+        <img
+          src={project.image}
+          alt={project.alt}
+          className="h-full w-full object-cover"
+        />
+      </div>
     </div>
   );
 }
